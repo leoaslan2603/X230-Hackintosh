@@ -8,11 +8,11 @@ macOS for ThinkPad X220
 
 ### 2. BIOS settings
 
-– Restart > Load Setup Defaults
-– Config > Power > Power On with AC Attach > Disabled
-– Config > Serial ATA (SATA) > AHCI
-– Security > Memory protection > Execution Prevention > Enabled
-– Startup > UEFI/Legacy Boot > Both
+- Restart > Load Setup Defaults
+- Config > Power > Power On with AC Attach > Disabled
+- Config > Serial ATA (SATA) > AHCI
+- Security > Memory protection > Execution Prevention > Enabled
+- Startup > UEFI/Legacy Boot > Both
 
 ### 3. Hardware
 
