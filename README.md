@@ -1,10 +1,10 @@
-# X220-Hackintosh
-macOS for ThinkPad X220
+# X230-Hackintosh
+macOS for ThinkPad X230
 
 ## Pre-Installation
 
-### 1. Update BIOS to last version 1.46 !!!
-- Modified BIOS version 1.46: [Download](http://www.mcdonnelltech.com/X220_v1.46_Modified_BIOS.zip)
+### 1. Update BIOS!!!
+- Modified BIOS: [Github](https://github.com/n4ru/1vyrain/)
 
 ### 2. BIOS settings
 
@@ -18,10 +18,10 @@ macOS for ThinkPad X220
 
 |Compenent|Reference|
 |---|---|
-|CPU|Intel Core i5-2540M vPro|
-|RAM|DDR3L 8GB Bus 1600MHz|
-|GFX|Intel HD Graphics 3000|
-|Sound|Conexant 20672|
+|CPU|Intel Core i5-3320M vPro|
+|RAM|DDR3L 16GB Bus 1600MHz|
+|GFX|Intel HD Graphics 4000|
+|Sound|Realtek ALC3202|
 |Display|12.5" IPS LCD|
 |WIFI|Intel Centrino® Advanced-N 6205|
 
