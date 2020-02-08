@@ -12,7 +12,7 @@ macOS for ThinkPad X230
 - Config > Power > Power On with AC Attach > Disabled
 - Config > Serial ATA (SATA) > AHCI
 - Security > Memory protection > Execution Prevention > Enabled
-- Startup > UEFI/Legacy Boot > Both
+- Startup > UEFI/Legacy Boot > UEFI Only - CSM Disabled
 
 ### 3. Hardware
 
