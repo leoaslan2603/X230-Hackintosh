@@ -1,6 +1,6 @@
 DefinitionBlock ("", "SSDT", 2, "X230", "WIFI", 0)
 {
-    External(_SB.PCI0.RP02, DeviceObj)
+    External (_SB.PCI0.RP02, DeviceObj)
     
     Scope (_SB.PCI0.RP02)
     {
@@ -28,8 +28,7 @@ DefinitionBlock ("", "SSDT", 2, "X230", "WIFI", 0)
             If (!Arg2) { Return (Buffer() { 0x03 } ) }
             Local0 = Package()
             {
-                "compatible",   //4322
-                "pci14e4,432b"//"pci14e4,4331"
+                "compatible", "pci14e4,432b"
             }
             Return (Local0)
         }

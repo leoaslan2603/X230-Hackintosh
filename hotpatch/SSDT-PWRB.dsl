@@ -1,4 +1,4 @@
-DefinitionBlock("", "SSDT", 2, "X230", "PWRB", 0)
+DefinitionBlock ("", "SSDT", 2, "X230", "PWRB", 0)
 {
     Scope (\_SB)
     {

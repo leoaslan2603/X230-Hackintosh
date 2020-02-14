@@ -1,4 +1,4 @@
-DefinitionBlock("", "SSDT", 2, "X230", "PRW", 0)
+DefinitionBlock ("", "SSDT", 2, "X230", "PRW", 0)
 {
     Scope (_SB)
     {
@@ -12,7 +12,7 @@ DefinitionBlock("", "SSDT", 2, "X230", "PRW", 0)
         }
     }
     
-    External(_SB.PCI0.EH01, DeviceObj)
+    External (_SB.PCI0.EH01, DeviceObj)
     If (CondRefOf (\_SB.PCI0.EH01))
     {
         Scope (_SB.PCI0.EH01)
@@ -24,7 +24,7 @@ DefinitionBlock("", "SSDT", 2, "X230", "PRW", 0)
         }
     }
 
-    External(_SB.PCI0.EH02, DeviceObj)
+    External (_SB.PCI0.EH02, DeviceObj)
     If (CondRefOf (\_SB.PCI0.EH02))
     {
         Scope (_SB.PCI0.EH02)
@@ -36,7 +36,7 @@ DefinitionBlock("", "SSDT", 2, "X230", "PRW", 0)
         }
     }
     
-    External(_SB.PCI0.XHC, DeviceObj)
+    External (_SB.PCI0.XHC, DeviceObj)
     
     If (CondRefOf (\_SB.PCI0.XHC))
     {
@@ -49,7 +49,7 @@ DefinitionBlock("", "SSDT", 2, "X230", "PRW", 0)
         }
     }
     
-    External(_SB.PCI0.HDEF, DeviceObj)
+    External (_SB.PCI0.HDEF, DeviceObj)
     
     If (CondRefOf (\_SB.PCI0.HDEF))
     {
@@ -62,7 +62,7 @@ DefinitionBlock("", "SSDT", 2, "X230", "PRW", 0)
         }
     }
 
-    External(_SB.PCI0.GLAN, DeviceObj)
+    External (_SB.PCI0.GLAN, DeviceObj)
     
     If (CondRefOf (\_SB.PCI0.GLAN))
     {

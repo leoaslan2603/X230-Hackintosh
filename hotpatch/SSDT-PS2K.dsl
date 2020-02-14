@@ -2,12 +2,6 @@ DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
 {
     External (_SB.PCI0.LPCB.EC, DeviceObj)
     External (_SB.PCI0.LPCB.PS2K, DeviceObj)
-    External (_SB.PCI0.LPCB.EC.XQ2B, MethodObj)
-    External (_SB.LID, DeviceObj)
-    External (_SB.SLPB, DeviceObj)
-    External (XWCF.MPWS, IntObj)
-    External (XWCF.MODE, IntObj)
-    External (XWCF.MYLD, IntObj)
     
     Scope (_SB.PCI0.LPCB.EC)
     {
@@ -18,39 +12,6 @@ DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
         Method (_Q15, 0, NotSerialized)
         {
             Notify (PS2K, 0x0405)
-        }
-        Method (_Q13, 0, NotSerialized)
-        {
-            If (\XWCF.MODE==0)
-            {
-                If (\XWCF.MYLD!=0)
-                {
-                    \XWCF.MYLD=0
-                }
-                Else
-                {
-                    \XWCF.MYLD=1
-                }
-                Notify (\_SB.LID, 0x80)
-            }
-            Else
-            {
-                \XWCF.MPWS=1
-                Notify (\_SB.SLPB, 0x80)
-            }
-        }
-        Method (_Q2B, 0, NotSerialized)
-        {
-            If (\XWCF.MODE==0)
-            {
-                \XWCF.MYLD=1
-                \_SB.PCI0.LPCB.EC.XQ2B()
-            }
-            Else
-            {
-                \XWCF.MPWS=1
-                Notify (\_SB.SLPB, 0x80)
-            }
         }
     }
     
@@ -70,12 +31,43 @@ DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
         {
             "Keyboard", Package()
             {
+                "ActionSwipeLeft",  "37 d, 21 d, 21 u, 37 u",
+                "ActionSwipeRight", "37 d, 1e d, 1e u, 37 u",
+                "SleepPressTime",   "1500",
                 "Swap command and option", ">y",
-                "Custom PS2 Map", Package()
-                {
-                Package(){},
-                "e037=e01e",
-                },
+            },
+            "Synaptics TouchPad", Package()
+            {
+                "BogusDeltaThreshX", 800,
+                "BogusDeltaThreshY", 800,
+                "Clicking", ">y",
+                "DragLockTempMask", 0x40004,
+                "DynamicEWMode", ">n",
+                "FakeMiddleButton", ">n",
+                "HWResetOnStart", ">y",
+                "ForcePassThrough", ">y",
+                "SkipPassThrough", ">y",
+                "PalmNoAction When Typing", ">y",
+                "ScrollResolution", 800,
+                "SmoothInput", ">y",
+                "UnsmoothInput", ">y",
+                "Thinkpad", ">y",
+                "DivisorX", 1,
+                "DivisorY", 1,
+                "FingerZ", 47,
+                "MaxTapTime", 100000000,
+                "MomentumScrollThreshY", 16,
+                "MouseMultiplierX", 8,
+                "MouseMultiplierY", 8,
+                "MouseScrollMultiplierX", 2,
+                "MouseScrollMultiplierY", 2,
+                "MultiFingerHorizontalDivisor", 4,
+                "MultiFingerVerticalDivisor", 4,
+                "Resolution", 3200,
+                "ScrollDeltaThreshX", 10,
+                "ScrollDeltaThreshY", 10,
+                "TrackpointScrollYMultiplier", 1, //Change this value to 0xFFFF in order to inverse the vertical scroll direction of the Trackpoint when holding the middle mouse button.
+                "TrackpointScrollXMultiplier", 1, //Change this value to 0xFFFF in order to inverse the horizontal scroll direction of the Trackpoint when holding the middle mouse button.
             },
         })
     }
