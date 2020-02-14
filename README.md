@@ -35,7 +35,7 @@ macOS for ThinkPad X230
 - Keyboard
 - Trackpad and Trackpoint
 - Sound
-- USB ports, HDMI port, HDMI Audio-Out
+- USB ports
 - SD Card Reader
 
 #### WIFI :
