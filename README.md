@@ -21,7 +21,7 @@ macOS for ThinkPad X230
 |CPU|Intel Core i5-3320M vPro|
 |RAM|DDR3L 16GB Bus 1600MHz|
 |GFX|Intel HD Graphics 4000|
-|Sound|Realtek ALC3202|
+|Sound|Realtek ALC269 (0x0269)|
 |Display|12.5" IPS LCD|
 |WIFI|Intel Centrino® Advanced-N 6205|
 
@@ -42,3 +42,4 @@ macOS for ThinkPad X230
 Wi-Fi cards that require no configuration whatsoever and will work automatically in macOS
 - Dell DW1510 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Broadcom)
 - Dell DW1515 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Atheros)
+- Dell DW1550 - 802.11ac 2.4 GHz & 5 GHz (Broadcom)
