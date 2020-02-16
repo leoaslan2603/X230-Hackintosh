@@ -177,6 +177,16 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
+					<string>_Q13 to XQ13</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X1ExMw==</data>
+					<key>Replace</key>
+					<data>WFExMw==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>_Q14 to XQ14</string>
 					<key>Disabled</key>
 					<false/>
@@ -244,38 +254,6 @@
 					<data>U0JETkA=</data>
 					<key>Replace</key>
 					<data>QkROWEA=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Method(GBIF,3,N) to XBIF</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>R0JJRgM=</data>
-					<key>Replace</key>
-					<data>WEJJRgM=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Method(GBST,4,N) to XBST</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>R0JTVAQ=</data>
-					<key>Replace</key>
-					<data>WEJTVAQ=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>BAT1:_STA to XSTA</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1NUQQ==</data>
-					<key>Replace</key>
-					<data>WFNUQQ==</data>
-					<key>TgtBridge</key>
-					<data>QkFUMQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -357,6 +335,16 @@
 					<key>Replace</key>
 					<data>WldBSwE=</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_LID to XLID</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X0xJRAA=</data>
+					<key>Replace</key>
+					<data>WExJRAA=</data>
+				</dict>
 			</array>
 			<key>SlpSmiAtWake</key>
 			<true/>
@@ -390,11 +378,25 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>kext-dev-mode=1 -v</string>
+		<string>dart=0 -v</string>
+		<key>CustomLogo</key>
+		<false/>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
+		<key>Log</key>
+		<false/>
+		<key>NeverDoRecovery</key>
+		<false/>
+		<key>NeverHibernate</key>
+		<true/>
+		<key>NoEarlyProgress</key>
+		<true/>
+		<key>Secure</key>
+		<false/>
 		<key>Timeout</key>
-		<integer>3</integer>
+		<integer>1</integer>
+		<key>XMPDetection</key>
+		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -409,7 +411,7 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict>
-				<key>alc-layout-id</key>
+				<key>layout-id</key>
 				<data>EgAAAA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
