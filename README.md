@@ -43,3 +43,9 @@ Wi-Fi cards that require no configuration whatsoever and will work automatically
 - Dell DW1510 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Broadcom)
 - Dell DW1515 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Atheros)
 - Dell DW1550 – 802.11ac 2.4 GHz & 5 GHz (Broadcom)
+
+
+## Support me :
+
+- Paypal: https://www.paypal.me/thebinhluong0519
+- Ethereum: 0xC202255193D95979A7C937aA3CB5220FAD9E2aBe
