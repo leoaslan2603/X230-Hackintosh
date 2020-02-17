@@ -257,6 +257,18 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
+					<string>BAT1:_STA to XSTA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X1NUQQ==</data>
+					<key>Replace</key>
+					<data>WFNUQQ==</data>
+					<key>TgtBridge</key>
+					<data>QkFUMQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>EH01_PRW to XPRW</string>
 					<key>Disabled</key>
 					<false/>
