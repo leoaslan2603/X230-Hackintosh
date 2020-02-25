@@ -8,11 +8,27 @@ macOS for ThinkPad X230
 
 ### 2. BIOS settings
 
-- Restart > Load Setup Defaults
-- Config > Power > Power On with AC Attach > Disabled
-- Config > Serial ATA (SATA) > AHCI
-- Security > Memory protection > Execution Prevention > Enabled
-- Startup > UEFI/Legacy Boot > UEFI Only - CSM Disabled
+### BIOS settings
+| Item | Setting |
+| ------------- | ------------ |
+| Config/Network/Wake On Lan | Disabled |
+| USB UEFI BIOS Support | Enabled |
+| Always On USB | Disabled | 
+| USB 3.0 Mode | Enabled | 
+| Power Intel Rapid Start Technology | Disabled | 
+| Serial SATA Controller Mode Option | AHCI |
+| Security Predesktop Authentication | Disabled |
+| Security Chip | Disabled | 
+| Memory Protection Execution Prevention | Enabled | 
+| Virtualization | Disabled |
+| Fingerprint Reader | Disabled | 
+| Anti Theft | Disabled | 
+| Computrace | Disabled | 
+| Secure Boot | Disabled | 
+| Startup Network Boot | PCI Lan | 
+| UEFI/Legacy Boot | UEFI Only | 
+| CSM Support | Disabled | 
+| Boot Mode | Quick |
 
 ### 3. Hardware
 
@@ -26,26 +42,34 @@ macOS for ThinkPad X230
 |WIFI|Intel Centrino® Advanced-N 6205|
 
 #### What will work:
-- CPU
+- Power Management (C/P-States, Fan RPM, Speedstep, etc)
 - HD Intel Graphic Card
 - Power Management
 - Sleep
 - Camera
+- Ethernet
 - Brightness
-- Keyboard
-- Trackpad and Trackpoint
+- Keyboard, Trackpad and Trackpoint
 - Sound
 - USB ports
 - SD Card Reader
 
-#### WIFI :
+#### Not working:
+- Fingerprint Reader
+- VGA
+
+#### WIFI:
 Wi-Fi cards that require no configuration whatsoever and will work automatically in macOS
 - Dell DW1510 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Broadcom)
 - Dell DW1515 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Atheros)
 - Dell DW1550 – 802.11ac 2.4 GHz & 5 GHz (Broadcom)
 
+## Issue:
+### Sound after sleep issues
 
-## Support me :
+* CodecCommander loaded in /S/L/E w/ Kext Utility
+
+## Support me:
 
 - Paypal: https://www.paypal.me/thebinhluong0519
 - Ethereum: 0xC202255193D95979A7C937aA3CB5220FAD9E2aBe
