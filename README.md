@@ -43,16 +43,17 @@ macOS for ThinkPad X230
 
 #### What will work:
 - Power Management (C/P-States, Fan RPM, Speedstep, etc)
-- HD Intel Graphic Card
-- Power Management
-- Sleep
+- HD Intel Graphic Card (HD4000)
+- Sleep (Sleep from menu + lid close sleep)
 - Camera
 - Ethernet
+- Battery
 - Brightness
 - Keyboard, Trackpad and Trackpoint
-- Sound
-- USB ports
+- Sound (automatic headphone detection, mute, volume controls fully working)
+- USB Ports
 - SD Card Reader
+- Bluetooth
 
 #### Not working:
 - Fingerprint Reader
@@ -60,9 +61,9 @@ macOS for ThinkPad X230
 
 #### WIFI:
 Wi-Fi cards that require no configuration whatsoever and will work automatically in macOS
-- Dell DW1510 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Broadcom)
+- Dell DW1510 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Broadcom) (Drop support 10.15)
 - Dell DW1515 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Atheros)
-- Dell DW1550 – 802.11ac 2.4 GHz & 5 GHz (Broadcom)
+- Dell DW1550 – 802.11ac 2.4 GHz & 5 GHz (Broadcom) (Recommended, natively 10.14 10.15)
 
 ## Issue:
 ### Sound after sleep issues
