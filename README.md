@@ -71,7 +71,7 @@ Wi-Fi cards that require no configuration whatsoever and will work automatically
 * CodecCommander loaded in /S/L/E w/ Kext Utility
 
 ### Reband Broadcom Wireless
-* http://blog.legendt.com/rebranding-broadcom-802-11a-b-g-n-cards/
+* Reband as APPLE AIRPORT EXTREME: [LINK](http://blog.legendt.com/rebranding-broadcom-802-11a-b-g-n-cards/)
 
 ## Support me:
 
