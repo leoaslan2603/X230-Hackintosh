@@ -1,5 +1,5 @@
 # X230-Hackintosh
-macOS for ThinkPad X230
+macOS for ThinkPad X230 (Mojave & Catalina)
 
 ## Pre-Installation
 
@@ -35,9 +35,9 @@ macOS for ThinkPad X230
 |Compenent|Reference|
 |---|---|
 |CPU|Intel Core i5-3320M vPro|
-|RAM|DDR3L 16GB Bus 1600MHz|
+|RAM|DDR3L 12GB Bus 1600MHz|
 |GFX|Intel HD Graphics 4000|
-|Sound|Realtek ALC269 (0x0269)|
+|Sound|Realtek ALC269|
 |Display|12.5" IPS LCD|
 |WIFI|Intel Centrino® Advanced-N 6205|
 
@@ -47,7 +47,7 @@ macOS for ThinkPad X230
 - Sleep (Sleep from menu + lid close sleep)
 - Camera
 - Ethernet
-- Battery
+- Battery Status
 - Brightness
 - Keyboard, Trackpad and Trackpoint
 - Sound (automatic headphone detection, mute, volume controls fully working)
@@ -64,6 +64,36 @@ Wi-Fi cards that require no configuration whatsoever and will work automatically
 - Dell DW1510 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Broadcom) (Drop support 10.15)
 - Dell DW1515 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Atheros)
 - Dell DW1550 – 802.11ac 2.4 GHz & 5 GHz (Broadcom) (Recommended, natively 10.14 10.15)
+
+## Installation
+
+....
+
+## Post-Installation
+
+### 1. Tools needed
+
+- Clover Installer (https://github.com/CloverHackyColor/CloverBootloader/releases)
+- OpenCore (soon)
+
+### 2. Kexts used
+- ACPIBatteryManager.kext
+- ACPIPoller.kext
+- AppleALC.kext
+- BrcmBluetoothInjector.kext (requires for BrcmPatchRAM3.kext)
+- BrcmFirmwareData.kext
+- BrcmPatchRAM2.kext (BrcmPatchRAM3.kext for Catalina)
+- EFICheckDisabler.kext
+- FakeSMC.kext
+- IntelMausi.kext
+- Lilu.kext
+- USBPorts.kext
+- VoodooPS2Controller.kext
+- VoodooSDHC.kext
+- WhateverGreen.kext
+
+### 3. Patched
+- Copy patch to /ACPI/patched/
 
 ## Issue:
 ### Sound after sleep issues
