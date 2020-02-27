@@ -2,11 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>This file is for ThinkPad X230</string>
 	<key>ACPI</key>
 	<dict>
 		<key>AutoMerge</key>
-		<true/>
-		<key>FixHeaders</key>
 		<true/>
 		<key>DSDT</key>
 		<dict>
@@ -34,6 +34,16 @@
 					<data>X0RTTQ==</data>
 					<key>Replace</key>
 					<data>WERTTQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_OSI to XOSI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X09TSQ==</data>
+					<key>Replace</key>
+					<data>WE9TSQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -177,36 +187,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>_Q13 to XQ13</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1ExMw==</data>
-					<key>Replace</key>
-					<data>WFExMw==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>_Q14 to XQ14</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1ExNA==</data>
-					<key>Replace</key>
-					<data>WFExNA==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>_Q15 to XQ15</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1ExNQ==</data>
-					<key>Replace</key>
-					<data>WFExNQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>BAT0:GBIF03 to XBIF03</string>
 					<key>Disabled</key>
 					<false/>
@@ -327,36 +307,6 @@
 					<key>TgtBridge</key>
 					<data>R0xBTg==</data>
 				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>_PTS to ZPTS</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1BUUwE=</data>
-					<key>Replace</key>
-					<data>WlBUUwE=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>_WAK to ZWAK</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1dBSwE=</data>
-					<key>Replace</key>
-					<data>WldBSwE=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>_LID to XLID</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X0xJRAA=</data>
-					<key>Replace</key>
-					<data>WExJRAA=</data>
-				</dict>
 			</array>
 			<key>SlpSmiAtWake</key>
 			<true/>
@@ -388,43 +338,24 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0</string>
-		<key>CustomLogo</key>
-		<false/>
+		<string>dart=0 darkwake=0 -v</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
-		<key>Log</key>
-		<false/>
-		<key>NeverDoRecovery</key>
-		<false/>
 		<key>NeverHibernate</key>
 		<true/>
-		<key>NoEarlyProgress</key>
-		<true/>
-		<key>Secure</key>
-		<false/>
 		<key>Timeout</key>
-		<integer>1</integer>
-		<key>XMPDetection</key>
-		<false/>
+		<integer>3</integer>
 	</dict>
 	<key>Devices</key>
 	<dict>
 		<key>Properties</key>
 		<dict>
-			<key>PciRoot(0x0)/Pci(0x17,0x0)</key>
-			<dict>
-				<key>compatible</key>
-				<string>pci8086,1e55</string>
-				<key>device-id</key>
-				<data>VR4AAA==</data>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict>
-				<key>layout-id</key>
+				<key>alc-layout-id</key>
 				<data>EgAAAA==</data>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<key>PciRoot(0)/Pci(0x02,0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>AwBmAQ==</data>
@@ -437,14 +368,38 @@
 				<key>framebuffer-unifiedmem</key>
 				<data>AAAAgA==</data>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x17,0x0)</key>
+			<dict>
+				<key>compatible</key>
+				<string>pci8086,1e55</string>
+				<key>device-id</key>
+				<data>VR4AAA==</data>
+			</dict>
 		</dict>
 	</dict>
 	<key>GUI</key>
 	<dict>
+		<key>Custom</key>
+		<dict>
+			<key>Entries</key>
+			<array>
+				<dict>
+					<key>Hidden</key>
+					<false/>
+					<key>Type</key>
+					<string>OSXRecovery</string>
+				</dict>
+				<dict>
+					<key>Type</key>
+					<string>Windows</string>
+					<key>Title</key>
+					<string>Windows</string>
+				</dict>
+			</array>
+		</dict>
 		<key>Hide</key>
 		<array>
 			<string>Preboot</string>
-			<string>Recovery</string>
 		</array>
 		<key>Mouse</key>
 		<dict>
@@ -458,10 +413,12 @@
 			<key>Legacy</key>
 			<false/>
 			<key>Linux</key>
-			<false/>
+			<true/>
 			<key>Tool</key>
 			<true/>
 		</dict>
+		<key>ScreenResolution</key>
+		<string>1366x768</string>
 		<key>Theme</key>
 		<string>Lenovo</string>
 	</dict>
@@ -488,22 +445,6 @@
 				<string>IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>AAAAAAAAAAAA</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable Port Limit</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>g/sPD4MDBQAA</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>MatchOS</key>
-				<string>10.14.x</string>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>g/sPkJCQkJCQ</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -534,6 +475,29 @@
 				<data>SW50ZXJuYWw=</data>
 			</dict>
 		</array>
+		<key>KernelToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>MSR 0xE2</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>ILniAAAADzA=</data>
+				<key>Replace</key>
+				<data>ILniAAAAkJA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable Panic Kext Logging</string>
+				<key>MatchOS</key>
+				<string>10.14.x</string>
+				<key>Find</key>
+				<data>igKEwHRC</data>
+				<key>Replace</key>
+				<data>igKEwOtC</data>
+			</dict>
+		</array>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
@@ -544,8 +508,12 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
+		<key>Mobile</key>
+		<true/>
 		<key>ProductName</key>
 		<string>MacBookPro9,2</string>
+		<key>Trust</key>
+		<true/>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
