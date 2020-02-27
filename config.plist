@@ -187,6 +187,26 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
+					<string>_Q14 to XQ14</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X1ExNA==</data>
+					<key>Replace</key>
+					<data>WFExNA==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q15 to XQ15</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X1ExNQ==</data>
+					<key>Replace</key>
+					<data>WFExNQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>BAT0:GBIF03 to XBIF03</string>
 					<key>Disabled</key>
 					<false/>
