@@ -60,9 +60,10 @@ macOS for ThinkPad X230 (Mojave & Catalina)
 - VGA
 
 #### WIFI:
-Inbuilt Intel WiFi won't work out of the box. Atheros AR5B95( Part number: 20002357) is a macOS supported/Lenovo-whitelisted card available for X230.
+Inbuilt Intel WiFi won't work out of the box.
 
-Alternativly, you can flash the BIOS and remove the whitelist if you plan to use Broadcom WLAN cards
+You can flash the BIOS and remove the whitelist if you plan to use Broadcom WLAN cards
+- Atheros AR5B95 (Lenovo Part number: 20002357) - 802.11a/b/g/n 2.4 GHz (Drop support 10.14 and newer)
 - Dell DW1510 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Broadcom) (Drop support 10.15)
 - Dell DW1515 – 802.11a/b/g/n 2.4 GHz & 5 GHz (Atheros)
 - Dell DW1550 – 802.11ac 2.4 GHz & 5 GHz (Broadcom) (Recommended, natively 10.14 10.15)
