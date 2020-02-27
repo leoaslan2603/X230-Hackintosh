@@ -1,7 +1,18 @@
 DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
 {
+    External (_SB_.PCI0.LPCB.EC, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
 
+    Scope (_SB.PCI0.LPCB.EC)
+    {
+        Method (_Q14, 0, NotSerialized)
+        {
+            Notify (PS2K, 0x0406)
+        }
+        Method (_Q15, 0, NotSerialized)
+        {
+            Notify (PS2K, 0x0405)
+        }
     Scope (_SB.PCI0.LPCB.PS2K)
     {
         Method (_DSM, 4, NotSerialized)
@@ -20,6 +31,13 @@ DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
 
         Name (RMCF, Package ()
         {
+            "Keyboard", Package()
+            {
+                "ActionSwipeLeft",  "37 d, 21 d, 21 u, 37 u",
+                "ActionSwipeRight", "37 d, 1e d, 1e u, 37 u",
+                "SleepPressTime",   "1500",
+                "Swap command and option", ">y",
+            },
             "Synaptics TouchPad", Package ()
             {
                 "BogusDeltaThreshX", 100,
