@@ -1,52 +1,34 @@
 DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
 {
-    External (_SB.PCI0.LPCB.EC, DeviceObj)
-    External (_SB.PCI0.LPCB.PS2K, DeviceObj)
-    
-    Scope (_SB.PCI0.LPCB.EC)
-    {
-        Method (_Q14, 0, NotSerialized)
-        {
-            Notify (PS2K, 0x0406)
-        }
-        Method (_Q15, 0, NotSerialized)
-        {
-            Notify (PS2K, 0x0405)
-        }
-    }
-    
+    External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
+
     Scope (_SB.PCI0.LPCB.PS2K)
     {
-        Method (_DSM, 4)
+        Method (_DSM, 4, NotSerialized)
         {
-            If (!Arg2) { Return (Buffer(One) { 0x03 } ) }
-            Return (Package()
+            If (LNot (Arg2))
             {
-                "RM,oem-id", "LENOVO",
-                "RM,oem-table-id", "Thinkpad_TrackPad",
+                Return (Buffer () { 0x03 })
+            }
+
+            Return (Package ()
+            {
+                "RM,oem-id", "LENOVO", 
+                "RM,oem-table-id", "Thinkpad_TrackPad"
             })
         }
-        
-        Name(RMCF, Package()
+
+        Name (RMCF, Package ()
         {
-            "Keyboard", Package()
+            "Synaptics TouchPad", Package ()
             {
-                "ActionSwipeLeft",  "37 d, 21 d, 21 u, 37 u",
-                "ActionSwipeRight", "37 d, 1e d, 1e u, 37 u",
-                "SleepPressTime",   "1500",
-                "Swap command and option", ">y",
-            },
-            "Synaptics TouchPad", Package()
-            {
-                "BogusDeltaThreshX", 800,
-                "BogusDeltaThreshY", 800,
+                "BogusDeltaThreshX", 100,
+                "BogusDeltaThreshY", 100,
                 "Clicking", ">y",
                 "DragLockTempMask", 0x40004,
                 "DynamicEWMode", ">n",
                 "FakeMiddleButton", ">n",
                 "HWResetOnStart", ">y",
-                "ForcePassThrough", ">y",
-                "SkipPassThrough", ">y",
                 "PalmNoAction When Typing", ">y",
                 "ScrollResolution", 800,
                 "SmoothInput", ">y",
@@ -66,8 +48,6 @@ DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
                 "Resolution", 3200,
                 "ScrollDeltaThreshX", 10,
                 "ScrollDeltaThreshY", 10,
-                "TrackpointScrollYMultiplier", 1, //Change this value to 0xFFFF in order to inverse the vertical scroll direction of the Trackpoint when holding the middle mouse button.
-                "TrackpointScrollXMultiplier", 1, //Change this value to 0xFFFF in order to inverse the horizontal scroll direction of the Trackpoint when holding the middle mouse button.
             },
         })
     }

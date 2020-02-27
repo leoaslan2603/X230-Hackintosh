@@ -18,7 +18,7 @@ DefinitionBlock ("", "SSDT", 2, "X230", "BAT0", 0)
         Or (Arg0, ShiftLeft (Local0, 0x08), Local0)
         Return (Local0)
     }    
-    Scope (\_SB.PCI0.LPCB.EC)
+    Scope (_SB.PCI0.LPCB.EC)
     {        
         Method (RE1B, 1, NotSerialized)
         {

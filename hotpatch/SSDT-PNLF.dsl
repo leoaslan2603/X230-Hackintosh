@@ -1,4 +1,4 @@
-DefinitionBlock ("", "SSDT", 2, "hack", "PNLF", 0)
+DefinitionBlock ("", "SSDT", 2, "X230", "PNLF", 0)
 {
     Scope (_SB)
     {
