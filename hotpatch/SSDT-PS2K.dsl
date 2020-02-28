@@ -13,6 +13,8 @@ DefinitionBlock ("", "SSDT", 2, "X230", "PS2K", 0)
         {
             Notify (PS2K, 0x0405)
         }
+    }
+    
     Scope (_SB.PCI0.LPCB.PS2K)
     {
         Method (_DSM, 4, NotSerialized)

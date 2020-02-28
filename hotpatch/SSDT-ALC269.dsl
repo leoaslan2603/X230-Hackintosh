@@ -26,4 +26,3 @@ DefinitionBlock ("", "SSDT", 2, "X230", "ALC269", 0)
         })
     }
 }
-

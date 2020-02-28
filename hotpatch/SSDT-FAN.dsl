@@ -10,7 +10,7 @@ DefinitionBlock ("", "SSDT", 2, "X230", "FAN", 0)
         Field (FRAM, ByteAcc, NoLock, Preserve)
         {   
             Offset (0x84),
-            HSP0,   8,    ///HSPD,   16,
+            HSP0,   8,
             HSP1,   8,
         } 
     }  

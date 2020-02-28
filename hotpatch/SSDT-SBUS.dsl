@@ -16,16 +16,12 @@ DefinitionBlock ("", "SSDT", 2, "X230", "SBUS", 0)
                 {
                     If (!Arg2)
                     {
-                        Return (Buffer (One)
-                        {
-                             0x03
-                        })
+                        Return (Buffer () { 0x03 })
                     }
 
-                    Return (Package (0x02)
+                    Return (Package ()
                     {
-                        "address", 
-                        0x57
+                        "address", 0x57
                     })
                 }
             }

@@ -22,60 +22,54 @@ DefinitionBlock ("", "SSDT", 2, "X230", "BAT0", 0)
     {        
         Method (RE1B, 1, NotSerialized)
         {
-            OperationRegion(ERAM, EmbeddedControl, Arg0, 1)
-            Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }
-            Return(BYTE)
+            OperationRegion (ERAM, EmbeddedControl, Arg0, 1)
+            Field (ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }
+            Return (BYTE)
         }
         Method (RECB, 2, Serialized)
         {
-            ShiftRight(Arg1, 3, Arg1)
-            Name(TEMP, Buffer(Arg1) { })
-            Add(Arg0, Arg1, Arg1)
-            Store(0, Local0)
-            While (LLess(Arg0, Arg1))
+            ShiftRight (Arg1, 3, Arg1)
+            Name (TEMP, Buffer(Arg1) { })
+            Add (Arg0, Arg1, Arg1)
+            Store (0, Local0)
+            While (LLess (Arg0, Arg1))
             {
-                Store(RE1B(Arg0), Index(TEMP, Local0))
-                Increment(Arg0)
-                Increment(Local0)
+                Store (RE1B (Arg0), Index (TEMP, Local0))
+                Increment (Arg0)
+                Increment (Local0)
             }
-            Return(TEMP)
+            Return (TEMP)
         }  
         OperationRegion (BRAM, EmbeddedControl, 0x00, 0x0100)          
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BRCA,8,BRCB,8,     //SBRC,   16,
-            BFC0,8,BFC1,8,     //SBFC,   16,
-                               //SBAE,   16, 
-                               //SBRS,   16, 
+            BRCA, 8, BRCB, 8,
+            BFC0, 8, BFC1, 8,
+
             Offset (0xA8),
-            BAC0,8,BAC1,8,     //SBAC,   16,
-            BVO0,8,BVO1,8,     //SBVO,   16,
-                               //SBAF,   16, 
-                               //SBBS,   16
+            BAC0, 8, BAC1, 8,
+            BVO0, 8, BVO1, 8,
         }
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BBM0,8,BBM1,8,     //SBBM,   16,
-                               //SBMD,   16, 
+            BBM0, 8, BBM1, 8,
                 
         }
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BDC0,8,BDC1,8,     //SBDC,   16,
-            BDV0,8,BDV1,8,     //SBDV,   16,
-                               //SBOM,   16, 
-                               //SBSI,   16, 
-                               //SBDT,   16, 
+            BDC0, 8, BDC1, 8,
+            BDV0, 8, BDV1, 8,
+
             Offset (0xAA),
-            BSN0,8,BSN1,8      //SBSN,   16,s2
+            BSN0, 8, BSN1, 8
         }
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BCH0,8,BCH1,8,BCH2,8,BCH3,8 //SBCH,   32
+            BCH0, 8, BCH1, 8, BCH2, 8, BCH3, 8
         }
         Method (GBIF, 3, NotSerialized)
         {

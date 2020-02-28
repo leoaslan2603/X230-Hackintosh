@@ -1,4 +1,4 @@
-DefinitionBlock ("", "SSDT", 2, "hack", "ALS0", 0)
+DefinitionBlock ("", "SSDT", 2, "X230", "ALS0", 0)
 {
     Scope (_SB)
     {
@@ -16,7 +16,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "ALS0", 0)
             {
                 If (_OSI ("Darwin"))
                 {
-                    Return (0x0B)
+                    Return (0x0F)
                 }
                 Else
                 {
