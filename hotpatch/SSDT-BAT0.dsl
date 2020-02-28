@@ -1,14 +1,18 @@
 DefinitionBlock ("", "SSDT", 2, "X230", "BAT0", 0)
 {
-    External (_SB.PCI0.LPCB.EC, DeviceObj)
-    External (_SB.PCI0.LPCB.EC.BATM, MutexObj)
-    External (_SB.PCI0.LPCB.EC.HIID, FieldUnitObj)
+    External (_SB.PCI0.LPC.EC, DeviceObj)
+    External (_SB.PCI0.LPC.EC.BATM, MutexObj)
+    External (_SB.PCI0.LPC.EC.HIID, FieldUnitObj)
+    
+    External (_SB.PCI0.LPC.EC.XBIF, MethodObj)
+    External (_SB.PCI0.LPC.EC.XBST, MethodObj)
     
     Method (B1B2, 2, NotSerialized)
     {
         ShiftLeft (Arg1, 8, Local0)
         Or (Arg0, Local0, Local0)
         Return (Local0)
+
     }
     Method (B1B4, 4, NotSerialized)
     {
@@ -17,9 +21,9 @@ DefinitionBlock ("", "SSDT", 2, "X230", "BAT0", 0)
         Or (Arg1, ShiftLeft (Local0, 0x08), Local0)
         Or (Arg0, ShiftLeft (Local0, 0x08), Local0)
         Return (Local0)
-    }    
-    Scope (_SB.PCI0.LPCB.EC)
-    {        
+    }
+    Scope (_SB.PCI0.LPC.EC)
+    {    
         Method (RE1B, 1, NotSerialized)
         {
             OperationRegion (ERAM, EmbeddedControl, Arg0, 1)
@@ -39,40 +43,48 @@ DefinitionBlock ("", "SSDT", 2, "X230", "BAT0", 0)
                 Increment (Local0)
             }
             Return (TEMP)
-        }  
+        }
         OperationRegion (BRAM, EmbeddedControl, 0x00, 0x0100)          
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BRCA, 8, BRCB, 8,
-            BFC0, 8, BFC1, 8,
-
+            BRCA, 8, BRCB, 8,       //SBRC,   16,
+            BFC0, 8, BFC1, 8,       //SBFC,   16,
+                                    //SBAE,   16, 
+                                    //SBRS,   16, 
             Offset (0xA8),
-            BAC0, 8, BAC1, 8,
-            BVO0, 8, BVO1, 8,
+            BAC0, 8, BAC1, 8,       //SBAC,   16,
+            BVO0, 8, BVO1, 8,       //SBVO,   16,
+                                    //SBAF,   16, 
+                                    //SBBS,   16
         }
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BBM0, 8, BBM1, 8,
+            BBM0, 8, BBM1, 8,       //SBBM,   16,
+                                    //SBMD,   16, 
                 
         }
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BDC0, 8, BDC1, 8,
-            BDV0, 8, BDV1, 8,
-
+            BDC0, 8, BDC1, 8,       //SBDC,   16,
+            BDV0, 8, BDV1, 8,       //SBDV,   16,
+                                    //SBOM,   16, 
+                                    //SBSI,   16, 
+                                    //SBDT,   16, 
             Offset (0xAA),
-            BSN0, 8, BSN1, 8
+            BSN0, 8, BSN1, 8        //SBSN,   16,s2
         }
         Field (BRAM, ByteAcc, NoLock, Preserve)
         {
             Offset (0xA0), 
-            BCH0, 8, BCH1, 8, BCH2, 8, BCH3, 8
+            BCH0, 8, BCH1, 8, BCH2, 8, BCH3, 8      //SBCH,   32
         }
         Method (GBIF, 3, NotSerialized)
         {
+            If (_OSI ("Darwin"))
+            { 
             Acquire (BATM, 0xFFFF)
             If (Arg2)
             {
@@ -153,10 +165,17 @@ DefinitionBlock ("", "SSDT", 2, "X230", "BAT0", 0)
             
             Release (BATM)
             Return (Arg1)
+            }
+            Else
+            {
+                Return (_SB.PCI0.LPC.EC.XBIF(Arg0, Arg1, Arg2))
+            }
         }
         
         Method (GBST, 4, NotSerialized)
         {
+            If (_OSI ("Darwin"))
+            {
             Acquire (BATM, 0xFFFF)
             If (And (Arg1, 0x20))
             {
@@ -229,6 +248,11 @@ DefinitionBlock ("", "SSDT", 2, "X230", "BAT0", 0)
             Store (Local3, Index (Arg3, 0x03))
             Release (BATM)
             Return (Arg3)
+            }
+            Else
+            {
+                Return (_SB.PCI0.LPC.EC.XBST(Arg0, Arg1, Arg2, Arg3))
+            }
         }
     }
 }
