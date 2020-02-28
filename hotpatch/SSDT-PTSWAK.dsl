@@ -14,7 +14,6 @@ DefinitionBlock ("", "SSDT", 2, "X230", "PTSWAK", 0)
             Name (_ADR, Zero)
             Name (FNOK, Zero)
             Name (MODE, Zero)
-            //
             Name (TPTS, Zero)
             Name (TWAK, Zero)
             Method (_STA, 0, NotSerialized)
