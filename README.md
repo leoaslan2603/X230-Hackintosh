@@ -1,6 +1,8 @@
 # X230-Hackintosh
 macOS for ThinkPad X230 (Mojave & Catalina)
 
+2/28/2020 - Clover bootloader (OpenCore soon)
+
 ## Pre-Installation
 
 ### 1. Update BIOS!!!
@@ -101,7 +103,7 @@ You can flash the BIOS and remove the whitelist if you plan to use Broadcom WLAN
 ## Issue:
 ### Sound after sleep issues
 
-* CodecCommander loaded in /S/L/E w/ Kext Utility
+* CodecCommander loaded in /L/E w/ Kext Utility
 
 ### Reband Broadcom Wireless
 * Reband as APPLE AIRPORT EXTREME: [LINK](http://blog.legendt.com/rebranding-broadcom-802-11a-b-g-n-cards/)
