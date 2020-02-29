@@ -108,6 +108,9 @@ You can flash the BIOS and remove the whitelist if you plan to use Broadcom WLAN
 ### Reband Broadcom Wireless
 * Reband as APPLE AIRPORT EXTREME: [LINK](http://blog.legendt.com/rebranding-broadcom-802-11a-b-g-n-cards/)
 
+### DW1510 on Catalina
+* Copy IO80211Family.kext on on my EFI to CLOVER/kexts/10.15/
+
 ## Support me:
 
 - Paypal: https://www.paypal.me/thebinhluong0519
