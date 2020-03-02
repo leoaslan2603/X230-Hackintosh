@@ -1,7 +1,9 @@
 # X230-Hackintosh
 macOS for ThinkPad X230 (Mojave & Catalina)
 
-2/28/2020 - Clover bootloader (OpenCore soon)
+March 2, 2020 - Clover bootloader (OpenCore soon)
+
+![0About](./screenshot/info.png)
 
 ## Pre-Installation
 
