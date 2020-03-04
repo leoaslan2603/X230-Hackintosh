@@ -120,15 +120,15 @@ You can flash the BIOS and remove the whitelist if you plan to use Broadcom WLAN
 
 ### Sound after sleep issues
 
-* CodecCommander loaded in /L/E w/ Kext Utility
+- CodecCommander loaded in /L/E w/ Kext Utility
 
 ### Reband Broadcom Wireless
 
-* Reband as APPLE AIRPORT EXTREME: [LINK](http://blog.legendt.com/rebranding-broadcom-802-11a-b-g-n-cards/)
+- Reband as APPLE AIRPORT EXTREME: [LINK](http://blog.legendt.com/rebranding-broadcom-802-11a-b-g-n-cards/)
 
 ### DW1510 on Catalina
 
-* Copy IO80211Family.kext on on my EFI to CLOVER/kexts/10.15/
+- Copy IO80211Family.kext on on my EFI to CLOVER/kexts/10.15/
 
 ## Support me
 
